@@ -1,9 +1,8 @@
 from django.contrib import admin
-from .models import Survey, Question, Choise, Response, Answer
-# Register your models here.
+from .models import Survey, Question, Choice, Response, Answer
 
 class ChoiceInline(admin.TabularInline):
-    model = Choise
+    model = Choice
     extra = 3
 
 class QuestionInline(admin.TabularInline):
@@ -17,7 +16,7 @@ class SurveyAdmin(admin.ModelAdmin):
 
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ['text', 'survey', 'qustiob_type', 'order']
+    list_display = ['text', 'survey', 'question_type', 'order']
     list_filter = ['survey', 'question_type']
     inlines = [ChoiceInline]
 
@@ -25,5 +24,5 @@ class QuestionAdmin(admin.ModelAdmin):
 class ResponseAdmin(admin.ModelAdmin):
     list_display = ['survey', 'created_at', 'user_ip']
 
-admin.site.register(Choise)
+admin.site.register(Choice)
 admin.site.register(Answer)
