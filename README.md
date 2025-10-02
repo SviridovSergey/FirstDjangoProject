@@ -31,7 +31,7 @@
 #### Шаг 1: Клонирование и настройка проекта
 ```bash
 # Клонируйте проект (если используете Git)
-git clone <https://github.com/SviridovSergey/FirstDjangoProject/>
+git clone <https://github.com/SviridovSergey/FirstDjangoProject>
 cd FirstDjangoProject
 
 # Или создайте папку проекта и скопируйте файлы
